@@ -1,0 +1,27 @@
+<div class="card-row">
+    <div class="card-col">
+        <nb-card>
+            <nb-card-header>
+                <h4>User Profile <button style="float: right;" nbButton status="danger"
+                        (click)="signOut()">Logout</button></h4>
+            </nb-card-header>
+            <nb-card-body class="card-body">
+                <img style="float: right; border-radius: 50%; padding: 5px;" [src]="user.photoUrl" alt="">
+                <table style="float: left; padding-top: 10px;">
+                    <tbody>
+                        <tr>
+                            <td><strong>Name</strong> </td>
+                            <td>:</td>
+                            <td>{{user.name}}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Email</strong></td>
+                            <td>:</td>
+                            <td>{{user.email}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </nb-card-body>
+        </nb-card>
+    </div>
+</div>

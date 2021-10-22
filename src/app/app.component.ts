@@ -1,10 +1,16 @@
-import { Component, VERSION } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'my-app',
+  selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: [ './app.component.css' ]
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent  {
-  name = 'Angular ' + VERSION.major;
+export class AppComponent {
+  constructor(private router: Router) {
+    let token = localStorage.getItem('authToken');
+    if (token == null) {
+      this.router.navigate(["/login"]);
+    }
+  }
 }
